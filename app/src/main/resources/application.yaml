@@ -1,0 +1,7 @@
+# embeddedServerで起動する時は使わない
+ktor:
+  deployment:
+    port: 8081
+  application:
+    modules:
+      - com.example.ApplicationKt.module
