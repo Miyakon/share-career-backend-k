@@ -1,4 +1,5 @@
 # embeddedServerで起動する時は使わない
+# Application.ktの設定が反映される
 ktor:
   deployment:
     port: 8081

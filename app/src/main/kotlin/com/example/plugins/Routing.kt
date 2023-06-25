@@ -9,5 +9,8 @@ fun Application.configureRouting() {
         get("/") {
             call.respondText("Hello World!\n")
         }
+        get("/v1/systems/ping") {
+            call.respondText("pong\n")
+        }
     }
 }

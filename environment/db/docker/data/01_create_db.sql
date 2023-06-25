@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS user;
+USE user;
+
+CREATE TABLE user (
+  id            INT(5)          ZEROFILL AUTO_INCREMENT PRIMARY KEY,
+  name          VARCHAR(255)    NOT NULL,
+  created_date  TIMESTAMP       DEFAULT CURRENT_TIMESTAMP
+);
