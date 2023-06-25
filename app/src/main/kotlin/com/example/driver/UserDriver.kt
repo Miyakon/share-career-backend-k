@@ -11,13 +11,13 @@ class UserDriver {
         val name = varchar("name", 255)
     }
 
-    fun connection(): String? {
+    fun connection(id: Int): String? {
         Database.connect("jdbc:mysql://127.0.0.1:3306/user", driver = "com.mysql.jdbc.Driver", user = "root", password = "root")
 
         var user: ResultRow? = null
         transaction {
             // Query the user with the given ID
-            user = User.select { User.id eq 1 }.singleOrNull()
+            user = User.select { User.id eq id }.singleOrNull()
         }
         return user?.let { it[User.name] }
     }

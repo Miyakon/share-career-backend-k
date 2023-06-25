@@ -7,13 +7,15 @@ import io.ktor.server.routing.*
 
 fun Application.configureRouting() {
     routing {
-        get("/") {
+        route("/v1") {
+            get("/users/{userId}") {
             val driver = UserDriver()
-            val name = driver.connection()
+            val name = driver.connection(1)
             call.respondText("Hello ${name}!\n")
-        }
-        get("/v1/systems/ping") {
-            call.respondText("pong\n")
+            }
+            get("/systems/ping") {
+                call.respondText("pong\n")
+            }
         }
     }
 }
