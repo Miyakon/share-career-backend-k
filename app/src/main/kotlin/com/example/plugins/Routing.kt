@@ -9,8 +9,9 @@ fun Application.configureRouting() {
     routing {
         route("/v1") {
             get("/users/{userId}") {
+                val userId = call.parameters["userId"]!!.toInt()
             val driver = UserDriver()
-            val name = driver.connection(1)
+            val name = driver.connection(userId)
             call.respondText("Hello ${name}!\n")
             }
             get("/systems/ping") {
