@@ -4,10 +4,10 @@ import com.example.domain.Id
 import com.example.domain.User
 import com.example.port.UserPort
 
-class GetUserByIdUseCase(
+class UserUseCase(
     private val userPort: UserPort
 ) {
-    fun getUserbyId(userId: Id): User {
+    fun getUserbyId(userId: Id): User? {
         return userPort.getUserById(userId)
     }
 }
